@@ -1,0 +1,215 @@
+:root {
+    --color-text: rgb(20, 50, 103);
+    --color--border: rgb(20, 138, 202);
+    --color--btn: rgb(113, 218, 239);
+}
+* {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    background-color: rgb(226, 231, 235);
+    overflow-x: hidden;
+}
+html {
+    overflow-x: hidden;
+}
+section {
+    width: 50vw;
+    margin-top: 20vh;
+    height: auto;
+    display: grid;
+    place-items: center;
+    background-color: aliceblue;
+    padding: 20px;
+}
+/* title */
+.title {
+    font-size: 2rem;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+/* alert */
+.alert {
+    width: 50%;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    position: absolute;
+    top: 10vh;
+    transition: 0.2s;
+}
+.alert-insert {
+    visibility: visible;
+    background-color: rgba(0, 255, 60, 0.48);
+}
+.alert-delete {
+    visibility: visible;
+    background-color: rgba(255, 0, 0, 0.589);
+}
+/* end alert */
+/* edit form */
+.form-principal {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.form-principal input {
+    width: 50%;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: rgb(222, 224, 227);
+}
+.form-principal input::placeholder {
+    text-transform: uppercase;
+}
+.form-principal input:focus {
+    border: none;
+    border-radius: 3px;
+    outline: 2px solid var(--color--border);
+    z-index: 2;
+}
+
+/* edit btn submit */
+.btn-submit {
+    background-color: var(--color--btn);
+    width: 20%;
+    border: none;
+    font-weight: bold;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    letter-spacing: 2px;
+    font-size: 1.04rem;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.btn-submit:hover,
+.btn-edit:hover,
+.btn-delete:hover,
+.btn-edit-ok:hover {
+    transition: 0.3s;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.772);
+}
+/* shooping container */
+.shopping-container {
+    width: 70%;
+    background-color: rgba(225, 225, 225, 0.303);
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.shopping-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 10px 0;
+}
+.shopping-list.done .item {
+    color: #000;
+    text-decoration: line-through;
+}
+
+.shopping-item {
+    width: 80%;
+}
+.item {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+/* edit btns */
+.btn-container {
+    padding-left: 10px;
+    display: flex;
+}
+.btn-edit,
+.btn-delete {
+    font-size: 1.1rem;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+.btn-edit {
+    color: rgb(29, 225, 29);
+    border: none;
+    background: none;
+}
+.btn-edit-ok {
+    color: rgb(29, 225, 29);
+    border: none;
+    font-size: 1.1rem;
+    padding: 5px 5px;
+    cursor: pointer;
+    background: none;
+    display: none;
+}
+.shopping-list.done .btn-edit {
+    display: none;
+}
+.shopping-list.done .btn-edit-ok {
+    display: block;
+}
+.btn-delete {
+    color: rgb(255, 5, 5);
+    border: none;
+    background: none;
+}
+/* end edit btns */
+.clear {
+    display: grid;
+    margin-top: 10px;
+}
+.clear-items {
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: rgb(255, 0, 0);
+    text-align: center;
+}
+.clear-items:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+/* responsive desing */
+@media (max-width: 950px) {
+    section {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        width: 100vw;
+        margin-top: 10vh;
+    }
+    .alert {
+        top: 1vh;
+    }
+    .shopping-container {
+        width: 75%;
+    }
+    .shopping-item {
+        width: 70%;
+    }
+    .btn-submit {
+        font-size: 0.9rem;
+        width: 25%;
+    }
+}
+@media (max-width: 400px) {
+    .btn-container {
+        padding-left: 0px;
+    }
+}
